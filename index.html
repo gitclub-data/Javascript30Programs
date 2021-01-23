@@ -1,132 +1,82 @@
-<!DOCTYPE>
 <html>
-
 <head>
-	<title>JS+CSS Clock</title>
-</head>
-<style type="text/css">
-	html {
-		background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
-		text-align: center;
-		background-size: cover;
-	}
-
-	body {
-		align-items: center;
-	}
-
-	.clock {
-		width: 25rem;
-		height: 25rem;
-		border: whitesmoke solid 1.5rem;
-		border-radius: 50%;
-		box-shadow: inset 0px 0px 9px 10px #573e3e;
-		margin-top: 70px;
-		margin-right: 100px;
-		margin-bottom: 100px;
-		margin-left: 430px;
-
-	}
-
-	.clock-face-sec {
-		position: relative;
-		top: 5%;
-		left: 5%;
-		width: 90%;
-		height: 90%;
-		transform: translateY(-5px);
-		/* background: blueviolet; */
-	}
-
-	.clock-face-min {
-		position: relative;
-		top: 14%;
-		left: 13%;
-		width: 75%;
-		height: 75%;
-		transform: translateY(-5px);
-		/* background: rgb(35, 216, 80); */
-	}
-
-	.clock-face-hour {
-		position: relative;
-		top: 14%;
-		left: 12.5%;
-		width: 75%;
-		height: 75%;
-		transform: translateY(-5px);
-		/* background: rgb(216, 92, 35); */
-	}
-
-	.hand {
-		top: 50%;
-		width: 50%;
-		position: absolute;
-		height: 5px;
-		background: black;
-		transform-origin: 100%;
-		transform: rotate(0deg);
-		transition: all 0.5s;
-		transition-timing-function: cubic-bezier(0.57, 1.17, 0.46, 1.3);
-	}
-
-	.hour-handle {
-		transform: rotate(90deg);
-		box-shadow: 0px 0px 11px 3px #d6d6d6
-	}
-
-	.min-handle {
-		transform: rotate(90deg);
-		box-shadow: 0px 0px 11px 3px #d6d6d6
-	}
-
-	.sec-handle {
-		transform: rotate(90deg);
-		box-shadow: 0px 0px 11px 3px #d6d6d6
-	}
-</style>
-
-<body>
-	<div class="clock">
-		<div class="clock-face-sec">
-			<div class="hand sec-handle" id="sec"></div>
-			<div class=clock-face-min>
-				<div class="hand min-handle" id="min"></div>
-				<div class="clock-face-hour">
-					<div class="hand hour-handle" id="hour"></div>
-				</div>
+	<link rel="Stylesheet" href="stylesheet.css"></link>
+	</head>
+	<body>
+		<div style="height: 250px;"></div>
+		<div id="start">
+			<div  id=65 class="boxes">
+				<p class="words">A</p>
+				<p class="beat">clap</p>
+				<audio key=65 src="sounds/clap.wav" type="audio/wav"></audio>
 			</div>
-
+			<div id="83" class="boxes">
+				<p class="words">S</p>
+				<p class="beat"> hihat</p>
+				<audio key="83" src="sounds/hihat.wav" type="audio/wav"></audio>
+			</div>
+			<div id="68" class="boxes">
+				<p class="words">D</p>
+				<p class="beat"> Kick</p>
+				<audio key="68" src="sounds/kick.wav" type="audio/wav"></audio>
+			</div>
+			<div id="70" class="boxes">
+				<p class="words">F</p>
+				<p class="beat"> Openhat</p>
+				<audio key="70" src="sounds/openhat.wav" type="audio/wav"></audio>
+			</div>
+			<div id="71" class="boxes">
+				<p class="words">G</p> 
+				<p class="beat">Boom</p>
+				<audio key="71" src="sounds/boom.wav" type="audio/wav"></audio>
+			</div>
+			<div id="72" class="boxes">
+				<p class="words">H</p>
+				<p class="beat"> Ride</p>
+				<audio key="72" src="sounds/ride.wav" type="audio/wav"></audio>
+			</div>
+			<div id="74" class="boxes">
+				<p class="words">J</p>
+				<p class="beat"> Snare</p>
+				<audio key="74" src="sounds/snare.wav" type="audio/wav"></audio>
+			</div>
+			<div id="75" class="boxes">
+				<p class="words">K</p> 
+				<p class="beat">Tom</p>
+				<audio key="75" src="sounds/tom.wav" type="audio/wav"></audio>
+			</div>
+			<div id="76" class="boxes">
+				<p class="words">L</p> 
+				<p class="beat">Tink</p>
+				<audio key="76" src="sounds/tink.wav" type="audio/wav"></audio>
+			</div>
 		</div>
-	</div>
-	<script>
-		obj = new Date()
-			Hour = obj.getHours()
-			Min = obj.getMinutes()
-			Sec=obj.getSeconds()	
-			Hour_h=(Hour*30)+90
-			Min_h=(Min*6)+90
-			Sec_h=(Sec*6)+90	
-			document.getElementById('hour').style.transform="rotate("+Hour_h+"deg)";
-			document.getElementById('min').style.transform="rotate("+Min_h+"deg)";
-			document.getElementById('sec').style.transform="rotate("+Sec_h+"deg)";
 		
-		setInterval(() => {
-			Sec=Sec+1
-			Sec_h=(Sec*6)+90
-			document.getElementById('sec').style.transform="rotate("+Sec_h+"deg)";
-		}, 1000)
-		setInterval(() => {
-			Min=Min+1
-			Min_h=(Min*6)+90
-			document.getElementById('min').style.transform="rotate("+Min_h+"deg)";
-		}, 60000)
-		setInterval(() => {
-			Hour=Hour+1
-			Hour_h=(Hour*30)+90
-			document.getElementById('hour').style.transform="rotate("+Hour_h+"deg)";
-		}, 3600000)
-	</script>
-</body>
+		<script type="text/javascript">
+			var x = document.getElementById("myAudio"); 
 
+			function playSound(event) {
+				const audio=document.querySelector(`audio[key="${event.keyCode}"]`);
+				const key=document.querySelector(`div[id="${event.keyCode}"]`);
+				if(!audio){
+					return ;
+				}
+				keywords=document.getElementById(`${event.keyCode}`).querySelector(".words")
+				keybeat=document.getElementById(`${event.keyCode}`).querySelector(".beat")
+				key.classList.add("transboxes")
+				keybeat.classList.add("transbeat")
+				keywords.classList.add("transwords")
+				audio.currentTime=0;
+				audio.play()
+				setTimeout(function() {
+    			key.classList.remove("transboxes")
+				keybeat.classList.remove("transbeat")
+				keywords.classList.remove("transwords")
+				}, 100);
+				  			}
+  			window.addEventListener('keydown', playSound)
+  			
+		</script>
+
+	</body>
 </html>
