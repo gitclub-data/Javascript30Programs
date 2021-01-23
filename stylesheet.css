@@ -1,22 +1,23 @@
 body{
-	background-image: url('background.jpg'); 
-	background-position:10% 20%;
+	margin :0;
+	padding:0;
 }
 
 
 
 #start{
 	padding: 20px;
-	margin: auto;
+	margin:auto;
+	padding-top: 15rem;
 	width: 75%;
+	display: flex;
 	text-transform: uppercase;
 }
 
 .boxes{
 	border:solid;
 	width: 7.5%;
-	float: left;
-	margin-left: 2%;
+	margin: auto;
 	height: 80px;
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
@@ -27,6 +28,8 @@ body{
 	font-size: 1.6vw;
 	opacity: 0.9;
 	font-weight: 900;
+	padding: 0;
+	margin-bottom: 0.7rem;
 }
 
 .beat{
@@ -34,6 +37,8 @@ body{
 	text-align: center;
 	font-size: 0.8vw;
 	font-weight: 900;
+	padding: 0;
+	margin: 0;
 }
 
 .transboxes{
@@ -54,6 +59,8 @@ body{
 	font-size: 1.8vw;
 	opacity: 0.9;
 	font-weight: 900;
+	padding: 0;
+	margin-bottom: 0.7rem;
 	transition: all .07s ease;
 }
 
@@ -62,6 +69,8 @@ body{
 	text-align: center;
 	font-size: 1vw;
 	font-weight: 900;
+	padding: 0;
+	margin: 0;
 	transition: all .07s ease;
 }
 
