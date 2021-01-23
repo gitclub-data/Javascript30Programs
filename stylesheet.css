@@ -1,0 +1,73 @@
+body{
+	background-image: url('background.jpg'); 
+	background-position:10% 20%;
+}
+
+
+
+#start{
+	padding: 20px;
+	margin: auto;
+	width: 75%;
+	text-transform: uppercase;
+}
+
+.boxes{
+	border:solid;
+	width: 7.5%;
+	float: left;
+	margin-left: 2%;
+	height: 80px;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+}
+.words{
+	color: white;
+	text-align: center;
+	font-size: 1.6vw;
+	opacity: 0.9;
+	font-weight: 900;
+}
+
+.beat{
+	color: yellow;
+	text-align: center;
+	font-size: 0.8vw;
+	font-weight: 900;
+}
+
+.transboxes{
+	border:solid;
+	border-color:yellow;
+	width: 8%;
+	float: left;
+	margin-left: 2%;
+	height: 90px;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	box-shadow: 0px 0px 4px 2px yellow;
+	transition: all .07s ease;
+
+}
+.transwords{
+	color: white;
+	text-align: center;
+	font-size: 1.8vw;
+	opacity: 0.9;
+	font-weight: 900;
+	transition: all .07s ease;
+}
+
+.transbeat{
+	color: yellow;
+	text-align: center;
+	font-size: 1vw;
+	font-weight: 900;
+	transition: all .07s ease;
+}
+
+
+
+
+
+
+

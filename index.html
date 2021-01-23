@@ -1,0 +1,82 @@
+<html>
+<head>
+	<link rel="Stylesheet" href="stylesheet.css"></link>
+	</head>
+	<body>
+		<div style="height: 250px;"></div>
+		<div id="start">
+			<div  id=65 class="boxes">
+				<p class="words">A</p>
+				<p class="beat">clap</p>
+				<audio key=65 src="sounds/clap.wav" type="audio/wav"></audio>
+			</div>
+			<div id="83" class="boxes">
+				<p class="words">S</p>
+				<p class="beat"> hihat</p>
+				<audio key="83" src="sounds/hihat.wav" type="audio/wav"></audio>
+			</div>
+			<div id="68" class="boxes">
+				<p class="words">D</p>
+				<p class="beat"> Kick</p>
+				<audio key="68" src="sounds/kick.wav" type="audio/wav"></audio>
+			</div>
+			<div id="70" class="boxes">
+				<p class="words">F</p>
+				<p class="beat"> Openhat</p>
+				<audio key="70" src="sounds/openhat.wav" type="audio/wav"></audio>
+			</div>
+			<div id="71" class="boxes">
+				<p class="words">G</p> 
+				<p class="beat">Boom</p>
+				<audio key="71" src="sounds/boom.wav" type="audio/wav"></audio>
+			</div>
+			<div id="72" class="boxes">
+				<p class="words">H</p>
+				<p class="beat"> Ride</p>
+				<audio key="72" src="sounds/ride.wav" type="audio/wav"></audio>
+			</div>
+			<div id="74" class="boxes">
+				<p class="words">J</p>
+				<p class="beat"> Snare</p>
+				<audio key="74" src="sounds/snare.wav" type="audio/wav"></audio>
+			</div>
+			<div id="75" class="boxes">
+				<p class="words">K</p> 
+				<p class="beat">Tom</p>
+				<audio key="75" src="sounds/tom.wav" type="audio/wav"></audio>
+			</div>
+			<div id="76" class="boxes">
+				<p class="words">L</p> 
+				<p class="beat">Tink</p>
+				<audio key="76" src="sounds/tink.wav" type="audio/wav"></audio>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var x = document.getElementById("myAudio"); 
+
+			function playSound(event) {
+				const audio=document.querySelector(`audio[key="${event.keyCode}"]`);
+				const key=document.querySelector(`div[id="${event.keyCode}"]`);
+				if(!audio){
+					return ;
+				}
+				keywords=document.getElementById(`${event.keyCode}`).querySelector(".words")
+				keybeat=document.getElementById(`${event.keyCode}`).querySelector(".beat")
+				key.classList.add("transboxes")
+				keybeat.classList.add("transbeat")
+				keywords.classList.add("transwords")
+				audio.currentTime=0;
+				audio.play()
+				setTimeout(function() {
+    			key.classList.remove("transboxes")
+				keybeat.classList.remove("transbeat")
+				keywords.classList.remove("transwords")
+				}, 100);
+				  			}
+  			window.addEventListener('keydown', playSound)
+  			
+		</script>
+
+	</body>
+</html>
